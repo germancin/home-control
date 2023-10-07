@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-// const Gpio = require('pigpio').Gpio;
+const Gpio = require('pigpio').Gpio;
 // const led = new Gpio(17, { mode: Gpio.OUTPUT });
 
 const app = express();
