@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const toggle_led = async (state) => {
     try {
-        const response = await axios.post('/api/toggle', { state });
+        const response = await axios.post('http://localhost:4000/api/toggle', { state });
         return response.data;
     } catch (error) {
         console.error(`Error in API: ${error}`);
