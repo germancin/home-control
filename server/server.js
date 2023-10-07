@@ -1,14 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-
-let Gpio;
-let led;
-try {
-    Gpio = require('pigpio').Gpio;
-    led = new Gpio(17, { mode: Gpio.OUTPUT });
-} catch (e) {
-    console.error('Could not instantiate Gpio, are you on the right environment (Raspberry Pi with Raspbian OS)?', e);
-}
+const Gpio = require('pigpio').Gpio;
+const led = new Gpio(17, { mode: Gpio.OUTPUT });
 
 const app = express();
 app.use(cors());
