@@ -7,12 +7,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/api/test', (req, res) => {
+    led.digitalWrite(1);
+    res.json({ status: 'success' });
+});
+
 app.post('/api/toggle', (req, res) => {
     const state = req.body.state;
 
     led.digitalWrite(state);
     res.json({ status: 'success' });
 });
+
 
 const PORT = process.env.PORT || 4000;
 
